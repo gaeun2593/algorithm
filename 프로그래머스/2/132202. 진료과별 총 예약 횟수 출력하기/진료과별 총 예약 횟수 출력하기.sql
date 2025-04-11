@@ -1,0 +1,7 @@
+-- 코드를 입력하세요
+SELECT
+    sub.MCDP_CD AS "진료과코드",
+    COUNT(*) AS "5월예약건수"
+  FROM (SELECT * FROM APPOINTMENT WHERE APNT_YMD LIKE "2022-05%") AS sub
+GROUP BY sub.MCDP_CD
+ORDER BY COUNT(*), sub.MCDP_CD;
